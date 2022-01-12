@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/cosmostagram/static/css/main.c6ef55e3.css",
+    "main.js": "/cosmostagram/static/js/main.00c00a40.js",
+    "static/js/787.8db93f1e.chunk.js": "/cosmostagram/static/js/787.8db93f1e.chunk.js",
+    "index.html": "/cosmostagram/index.html",
+    "main.c6ef55e3.css.map": "/cosmostagram/static/css/main.c6ef55e3.css.map",
+    "main.00c00a40.js.map": "/cosmostagram/static/js/main.00c00a40.js.map",
+    "787.8db93f1e.chunk.js.map": "/cosmostagram/static/js/787.8db93f1e.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.c6ef55e3.css",
+    "static/js/main.00c00a40.js"
+  ]
+}

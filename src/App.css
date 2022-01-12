@@ -5,7 +5,9 @@
 .App {
   text-align: center;
 }
-
+:root{
+  --theme-purple: rgb(190, 107, 238);
+}
 .App-logo {
   height: 40vmin;
   pointer-events: none;
@@ -13,10 +15,97 @@
 #gallery{
   
   
-   display: block;
+   display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  
+  position: relative;
+  top: 90px;
+ 
   
    
 }
+#explore{
+  top: 90px;
+  position: relative;
+  text-align: center;
+  font-size: 0.8em;
+  padding: 16px;
+  margin-bottom: 20px;
+  color: #6a696e;
+}
+#explore a{
+  color:var(--theme-purple);
+}
+#totallikes{
+  top: 90px;
+  position: relative;
+  font-style: italic;
+  padding-bottom: 13px;
+}
+#totallikes strong{
+  color: var(--theme-purple);
+}
+body{
+  background-color: rgb(255, 254, 255);
+}
+#main-nav{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  background-color: white;
+  border-bottom: 2px solid rgb(234, 229, 240);
+  position: fixed;
+  top: 0;
+  left:0;
+  width: 100%;
+  z-index: 100;
+  justify-content: space-between;
+  
+}
+
+#main-nav a{
+  text-decoration: none;
+  font-size: 26px;
+  color: black;
+  padding: 18px 0;
+ flex:auto;
+  font-weight: 900;
+  letter-spacing: 0.02em;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  flex:initial;
+ 
+}
+#main-nav .wrapper{
+  display: flex;
+  flex-direction: row;
+
+}
+a.active .icon{
+  fill:black
+}
+a .icon{
+  fill: transparent;
+  stroke: black;
+}
+#main-nav .right{
+  
+   align-items: center;
+   justify-content: end;
+   margin-left: auto;
+   position: relative;
+   margin-right: 0;
+   text-align: right;
+   flex: 1;
+   width: auto;
+   display: inline-flex;
+  
+   
+ }
+ .right a{
+   display: inline-flex;
+   margin-left: 0.8em;
+ }
 .heart{
   fill:transparent;
   cursor: pointer;
@@ -26,6 +115,10 @@
 .heart:hover{
   cursor: pointer;
  
+}
+.wrapper{
+  width: 70%;
+  margin: 0 auto;
 }
 
 .heart.fill{
@@ -48,29 +141,44 @@
   font-size: 20px;
   padding: 12px 30px;
   background-color: white;
+  position: relative;
+  top: 90px;
 }
 .home{
-  width:70%;
+  
   margin: 0 auto;
 }
 #gallery .col{
   display: inline-table;
   width: 45%;
-  margin: 12px;
+  font-family: sans-serif;
+  
 }
 #gallery .nasa-photo{
-  display: table;
+  display: inline-block;
   width: 100%;
-  padding: 10px;
-  column-break-inside: avoid;
+  padding: 0;
+ overflow: hidden;
   align-self: start;
   margin-bottom: 20px;
-  border: 1px solid;
+  border: 1px solid rgb(175, 172, 187);
+  border-radius: 1%;
+  background-color: white;
 
+}
+#gallery .nasa-photo h2{
+  font-size: 16px;
+}
+#gallery .nasa-photo .explaination{
+  font-size: 14px;
+}
+#gallery .nasa-photo .info{
+  padding: 12px;
 }
 #gallery .nasa-photo img{
   width: 100%;
   display: table;
+
 }
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {

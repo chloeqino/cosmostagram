@@ -3,21 +3,28 @@ import { Link } from "react-router-dom";
 import NasaPhoto from "./NasaPhoto";
 import {FaArrowCircleUp} from 'react-icons/fa';
 import { Button } from './Styles';
+import NanBar from "./NavBar";
 const today = new Date();
 function travelBack(days){
     let pastdate = new Date(today);
     pastdate.setDate(pastdate.getDate()-days);
     return pastdate;
 }
+function dateFormatter(dateObject){
+  let datestring = dateObject.getDate();
+  let yearstring = dateObject.getFullYear();
+  let monthstring = dateObject.getMonth()+1;
+  return yearstring+"-"+monthstring+"-"+datestring;
+}
 
-let initalgallery = [...Array(6).keys()].map((e)=>{
-    return <NasaPhoto photodate={travelBack(e)} />;
+let initalgallery = [...Array(10).keys()].map((e)=>{
+    return <NasaPhoto photodate={dateFormatter(travelBack(e))} />;
 });
 
 console.log(initalgallery);
 export default function Home(){
-    const [num,setNum] = useState(6);
-    const [start,setStart] = useState(6);
+    const [num,setNum] = useState(10);
+    const [start,setStart] = useState(10);
     const [gallery,setGallery] = useState([...initalgallery]);
     const [visible, setVisible] = useState(false)
    console.log(gallery);
@@ -48,7 +55,7 @@ export default function Home(){
        let n = start;
        let newgallery = gallery;
         while (n<=num+start){
-            newgallery.push(<NasaPhoto photodate={travelBack(n)} />)
+            newgallery.push(<NasaPhoto photodate={dateFormatter(travelBack(n))} />)
             n++;
         }
        setGallery(newgallery);
@@ -63,8 +70,8 @@ export default function Home(){
       });
     return (
         <div className="home">
-            <h1>Home</h1>
-             <div id="gallery">
+           
+             <div id="gallery" className="wrapper">
                  <div className="col">
                      {gallery.filter((e,i)=>{return i%2==0})}
                  </div>

@@ -1,8 +1,9 @@
 import React from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Home from "./components/Home";
-import NasaPhoto from "./components/NasaPhoto.js";
+import LikedPhoto from "./components/LikedPhoto";
 import "./App.css";
+import NanBar from "./components/NavBar";
 
 function App() {
   return (
@@ -10,9 +11,9 @@ function App() {
       <div className="app">
         <Routes>
           <Route element={<Home />} path="/" />
-          <Route element={<NasaPhoto />} path="/nasaphoto" />
+          <Route element={<LikedPhoto />} path="/likes" />
           </Routes>
-          
+          <NanBar />
       </div>
     
   );

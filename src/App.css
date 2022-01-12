@@ -64,12 +64,13 @@ body{
   
 }
 
+
 #main-nav a{
   text-decoration: none;
   font-size: 26px;
   color: black;
   padding: 18px 0;
- flex:auto;
+  display: inline-flex;
   font-weight: 900;
   letter-spacing: 0.02em;
   font-family: Georgia, 'Times New Roman', Times, serif;
@@ -78,7 +79,8 @@ body{
 }
 #main-nav .wrapper{
   display: flex;
-  flex-direction: row;
+  
+  display: -webkit-flex;
 
 }
 a.active .icon{
@@ -88,23 +90,33 @@ a .icon{
   fill: transparent;
   stroke: black;
 }
+button{
+  -webkit-appearance: none;
+  appearance: none;
+}
 #main-nav .right{
   
    align-items: center;
    justify-content: end;
-   margin-left: auto;
+   -webkit-justify-content:end;
+   
    position: relative;
-   margin-right: 0;
+ 
    text-align: right;
    flex: 1;
-   width: auto;
-   display: inline-flex;
+   -webkit-flex:1;
+   width: 100%;
+   display: inline-block;
+  
+  
+   
   
    
  }
  .right a{
    display: inline-flex;
    margin-left: 0.8em;
+  
  }
 .heart{
   fill:transparent;
@@ -164,6 +176,7 @@ a .icon{
   border: 1px solid rgb(175, 172, 187);
   border-radius: 1%;
   background-color: white;
+ 
 
 }
 #gallery .nasa-photo h2{
@@ -179,6 +192,14 @@ a .icon{
   width: 100%;
   display: table;
 
+}
+.nasa-photo .useraction{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.nasa-photo .useraction a{
+  text-decoration: none;
 }
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {

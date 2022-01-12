@@ -80,10 +80,7 @@ export default function Home(){
                  </div>
             
             </div>
-            <Button>
-     <FaArrowCircleUp onClick={scrollToTop} 
-     style={{display: visible ? 'inline' : 'none'}} />
-    </Button>
+           
             <button onClick={()=>LoadMore()} id="loadmore">More</button>
         </div>
     );
